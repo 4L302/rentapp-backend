@@ -4,12 +4,26 @@ const cors = require('cors');
 const uploadRoute = require('./routes/upload');
 
 const app = express();
-app.use(cors());
+
+// ✅ CORS configurato per Netlify e localhost
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://ga-rentapp.netlify.app'
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 app.use(express.json());
 
-app.use('/api/upload', uploadRoute);
+// ✅ Rotta per upload immagini
+app.use('/upload', uploadRoute);
 
-const PORT = 5000;
+// ✅ Porta gestita da Render o fallback a 5000
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server avviato sulla porta ${PORT}`);
+  console.log(`✅ Server avviato sulla porta ${PORT}`);
 });
