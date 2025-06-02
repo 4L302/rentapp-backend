@@ -7,7 +7,7 @@ const app = express();
 
 // ✅ CORS per Netlify + localhost
 const allowedOrigins = [
-  'http://localhost:3000',
+  'https://rentapp-backend.onrender.com/upload',
   'https://ga-rentapp.netlify.app'
 ];
 
