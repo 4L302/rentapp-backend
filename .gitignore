@@ -1,0 +1,17 @@
+# node modules
+node_modules/
+
+# dotenv environment variables
+.env
+
+# logs
+*.log
+npm-debug.log*
+
+# sistema operativo
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/
