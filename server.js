@@ -5,7 +5,7 @@ const uploadRoute = require('./routes/upload');
 
 const app = express();
 
-// ✅ Blocco CORS completo
+// ✅ CORS per Netlify + localhost
 const allowedOrigins = [
   'http://localhost:3000',
   'https://ga-rentapp.netlify.app'
