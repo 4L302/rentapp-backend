@@ -24,7 +24,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use('/upload', uploadRoute);
+app.use('/api/upload', uploadRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
